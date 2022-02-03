@@ -1,9 +1,10 @@
 {
   "name": "hooks",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "hooks React component",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "types": "types/index.d.ts",
   "files": [
     "css",
     "es",
@@ -11,7 +12,7 @@
     "umd"
   ],
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "nwb build-react-component && yarn tsc",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
     "start": "nwb serve-react-demo",
@@ -20,14 +21,15 @@
     "test:watch": "nwb test-react --server"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "react": "17.x"
   },
   "devDependencies": {
     "nwb": "0.25.x",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "typescript": "^4.5.5"
   },
-  "author": "",
+  "author": "yuxuan-zheng",
   "homepage": "",
   "license": "MIT",
   "repository": "",

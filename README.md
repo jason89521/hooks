@@ -1,16 +1,44 @@
 # hooks
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+[![Npm package version](https://badgen.net/npm/v/yuxuan-zheng/hooks)](https://npmjs.com/package/yuxuan-zheng/hooks)
 
-Describe hooks here.
+Some common used hooks.
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+## API Reference
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+### `useDebounced`
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+#### Description
+
+Use this hook to get the debounced value.
+
+#### Parameters
+
+| Name       | Type     | Default value | Description                                 |
+| :--------- | :------- | :------------ | :------------------------------------------ |
+| `value`    | `T`      | `undefined`   | **Required** The value you want to debounce |
+| `interval` | `number` | `1000`        | The debounce interval in milliseconds       |
+
+#### Returns
+
+| Name             | Type | Description         |
+| :--------------- | :--- | :------------------ |
+| `debouncedValue` | `T`  | The debounced value |
+
+#### Example
+
+```js
+const Example = () => {
+  const [value, setValue] = useState('');
+  const debouncedValue = useDebounced(value);
+
+  const onChange = e => setValue(e.target.value);
+
+  useEffect(() => {
+    // Do whatever you want upon the debounced value change
+    consolge.log(debouncedValue);
+  }, [debouncedValue]);
+
+  return <input type="text" value={value} onChange={onChange} />;
+};
+```

@@ -1,15 +1,21 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import React, { useEffect, useState } from 'react';
+import { render } from 'react-dom';
 
-import Example from '../../src'
+import { useDebounced } from 'src';
 
-export default class Demo extends Component {
-  render() {
-    return <div>
-      <h1>hooks Demo</h1>
-      <Example/>
-    </div>
-  }
-}
+const Demo = () => {
+  const [value, setValue] = useState('');
+  const debouncedValue = useDebounced(value);
 
-render(<Demo/>, document.querySelector('#demo'))
+  useEffect(() => {
+    console.log(debouncedValue);
+  }, [debouncedValue]);
+
+  const onChange = e => {
+    setValue(e.target.value);
+  };
+
+  return <input type="text" onChange={onChange} value={value} />;
+};
+
+render(<Demo />, document.querySelector('#demo'));

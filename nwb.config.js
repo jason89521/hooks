@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   type: 'react-component',
   npm: {
@@ -5,8 +7,13 @@ module.exports = {
     umd: {
       global: 'Hooks',
       externals: {
-        react: 'React'
-      }
-    }
-  }
-}
+        react: 'React',
+      },
+    },
+  },
+  webpack: {
+    aliases: {
+      src: path.resolve('src'),
+    },
+  },
+};
