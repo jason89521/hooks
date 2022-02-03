@@ -1,6 +1,6 @@
 {
   "name": "@yuxuan-zheng/hooks",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Common used hooks",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -9,7 +9,8 @@
     "css",
     "es",
     "lib",
-    "umd"
+    "umd",
+    "types"
   ],
   "scripts": {
     "build": "nwb build-react-component && yarn tsc",

@@ -1,6 +1,6 @@
 # hooks
 
-[![Npm package version](https://badgen.net/npm/v/yuxuan-zheng/hooks)](https://npmjs.com/package/yuxuan-zheng/hooks)
+[![Npm package version](https://badgen.net/npm/v/@yuxuan-zheng/hooks)](https://npmjs.com/package/@yuxuan-zheng/hooks)
 
 Some common used hooks.
 
