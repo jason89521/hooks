@@ -1,7 +1,7 @@
 {
-  "name": "hooks",
+  "name": "@yuxuan-zheng/hooks",
   "version": "0.0.0",
-  "description": "hooks React component",
+  "description": "Common used hooks",
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "types/index.d.ts",
@@ -32,8 +32,11 @@
   "author": "yuxuan-zheng",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "url": "https://github.com/jason89521/hooks",
+    "type": "git"
+  },
   "keywords": [
-    "react-component"
+    "hooks"
   ]
 }
