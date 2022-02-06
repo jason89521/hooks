@@ -6,6 +6,11 @@ Some common used hooks.
 
 ## API Reference
 
+All hooks will return either a value or an array. If the return value is an array, this document will list the values in order.
+
+- [useDebounced](#usedebounced)
+- [useIntersection](#useIntersection)
+
 ### `useDebounced`
 
 #### Description
@@ -41,4 +46,35 @@ const Example = () => {
 
   return <input type="text" value={value} onChange={onChange} />;
 };
+```
+
+### `useIntersection`
+
+#### Description
+
+Use this hook to determine whether the element is displayed in viewport.
+
+#### Parameters
+
+This hook doesn't need parameters.
+
+#### Returns
+
+| Name             | Type                            | Description                                                                           |
+| :--------------- | :------------------------------ | :------------------------------------------------------------------------------------ |
+| `isIntersecting` | `boolean`                       | Use this value to determine whether the target element is intersecting with viewport. |
+| `callbackRef`    | `(element:HTMLElement) => void` | Pass this callback to the target element's ref.                                       |
+
+#### Example
+
+```js
+const Example = () => {
+  const [isIntersecting, callbackRef] = useIntersection();
+
+  useEffect(() => {
+    // Do whatever you want when the target is intersecting with viewport
+  }, [isIntersecting])
+
+  return <div ref={callbackRef}></div>
+}
 ```

@@ -13,12 +13,12 @@ const useIntersection = () => {
     })
   );
 
-  const lastRef = useCallback(element => {
+  const callbackRef = useCallback(element => {
     observer.current.disconnect();
     if (element) observer.current.observe(element);
   }, []);
 
-  return [isIntersecting, lastRef];
+  return [isIntersecting, callbackRef];
 };
 
 export default useIntersection;
