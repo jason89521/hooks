@@ -36,7 +36,7 @@ const Example = () => {
 
   useEffect(() => {
     // Do whatever you want upon the debounced value change
-    consolge.log(debouncedValue);
+    console.log(debouncedValue);
   }, [debouncedValue]);
 
   return <input type="text" value={value} onChange={onChange} />;

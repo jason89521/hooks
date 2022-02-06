@@ -11,9 +11,4 @@ module.exports = {
       },
     },
   },
-  webpack: {
-    aliases: {
-      src: path.resolve('src'),
-    },
-  },
 };

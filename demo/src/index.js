@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 
-import { useDebounced } from 'src';
+import { useDebounced, useIntersection } from '../../src';
 
 const Demo = () => {
-  const [value, setValue] = useState('');
-  const debouncedValue = useDebounced(value);
-
-  useEffect(() => {
-    console.log(debouncedValue);
-  }, [debouncedValue]);
-
-  const onChange = e => {
-    setValue(e.target.value);
-  };
-
-  return <input type="text" onChange={onChange} value={value} />;
+  const [isIntersecting, lastRef] = useIntersection();
+  console.log(isIntersecting);
+  return (
+    <div style={{ display: 'flex', minHeight: '100rem', flexDirection: 'column' }}>
+      <div
+        ref={lastRef}
+      >
+        {isIntersecting ? 'intersecting' : 'no intersecting'}
+      </div>
+    </div>
+  );
 };
 
 render(<Demo />, document.querySelector('#demo'));
