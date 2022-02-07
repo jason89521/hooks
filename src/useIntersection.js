@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 
 /**
- * @returns {[boolean, (element: HTMLElement) => void]}
+ * @returns {[boolean, (element: HTMLElement | null) => void]}
  */
 const useIntersection = () => {
   const [isIntersecting, setIsIntersecting] = useState(false);
